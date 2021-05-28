@@ -8,6 +8,8 @@ function MainContent({ data }) {
       product_name={item.product_name}
       description={item.description}
       img={item.thumb}
+      price={item.price}
+      currency={item.currency}
     />
   ));
   return <div className={Styles.container}>{items}</div>;

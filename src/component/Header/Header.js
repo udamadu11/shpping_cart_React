@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -17,7 +17,7 @@ import SearchIcon from "@material-ui/icons/Search";
 
 //css
 import Styles from "./header.module.css";
-function Header() {
+function Header({ handleChange }) {
   return (
     <div className={Styles.grow}>
       <AppBar position="static">
@@ -40,6 +40,7 @@ function Header() {
               placeholder="Search..."
               inputProps={{ "aria-label": "Search" }}
               className={Styles.inputBase}
+              onChange={handleChange}
             />
           </div>
           <div className={Styles.grow}>

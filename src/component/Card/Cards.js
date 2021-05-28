@@ -14,10 +14,10 @@ import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 //css
 import Styles from "./cards.module.css";
 
-function Cards({ product_name, description, img }) {
+function Cards({ product_name, description, img, price, currency }) {
   return (
     <Card className={Styles.root}>
-      <CardHeader title={product_name} subheader="ashha fgfgf fgf" />
+      <CardHeader title={product_name} subheader={`${price} ${currency}`} />
       <CardMedia className={Styles.media} title={product_name}>
         <img src={img} />
       </CardMedia>

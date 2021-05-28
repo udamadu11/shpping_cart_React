@@ -1,8 +1,9 @@
 const product_card = [
   {
     id: 1,
-    product_name: "Rayes Alpha",
-    description: "fsdfs fdfd fdf dfdf df df ",
+    product_name: "WM160",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     price: 350,
     currency: "$",
     thumb: "./images/1.png",
@@ -10,7 +11,8 @@ const product_card = [
   {
     id: 2,
     product_name: "Rayes Alpha",
-    description: "fsdfs fdfd fdf dfdf df df",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     price: 350,
     currency: "$",
     thumb: "./images/2.png",
@@ -18,7 +20,8 @@ const product_card = [
   {
     id: 3,
     product_name: "Rayes Alpha",
-    description: "fsdfs fdfd fdf dfdf df df",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     price: 350,
     currency: "$",
     thumb: "./images/11.png",
@@ -26,7 +29,8 @@ const product_card = [
   {
     id: 4,
     product_name: "Rayes Alpha",
-    description: "fsdfs fdfd fdf dfdf df df",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     price: 350,
     currency: "$",
     thumb: "./images/4.png",
@@ -34,7 +38,8 @@ const product_card = [
   {
     id: 5,
     product_name: "Rayes Alpha",
-    description: "fsdfs fdfd fdf dfdf df df",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     price: 350,
     currency: "$",
     thumb: "./images/5.png",
@@ -42,7 +47,8 @@ const product_card = [
   {
     id: 6,
     product_name: "Rayes Alpha",
-    description: "fsdfs fdfd fdf dfdf df df",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     price: 350,
     currency: "$",
     thumb: "./images/6.png",
@@ -50,7 +56,8 @@ const product_card = [
   {
     id: 7,
     product_name: "Rayes Alpha",
-    description: "fsdfs fdfd fdf dfdf df dfs",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     price: 350,
     currency: "$",
     thumb: "./images/7.png",
@@ -58,7 +65,8 @@ const product_card = [
   {
     id: 8,
     product_name: "Rayes Alpha",
-    description: "fsdfs fdfd fdf dfdf df df",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     price: 350,
     currency: "$",
     thumb: "./images/8.png",
@@ -66,50 +74,11 @@ const product_card = [
   {
     id: 9,
     product_name: "Rayes Alpha",
-    description: "fsdfs fdfd fdf dfdf df df",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     price: 350,
     currency: "$",
     thumb: "./images/9.png",
-  },
-  {
-    id: 10,
-    product_name: "Rayes Alpha",
-    description: "fsdfs fdfd fdf dfdf df df",
-    price: 350,
-    currency: "$",
-    thumb: "./images/10.png",
-  },
-  {
-    id: 11,
-    product_name: "Rayes Alpha",
-    description: "fsdfs fdfd fdf dfdf df df",
-    price: 350,
-    currency: "$",
-    thumb: "./images/12.png",
-  },
-  {
-    id: 12,
-    product_name: "Rayes Alpha",
-    description: "fsdfs fdfd fdf dfdf df df",
-    price: 350,
-    currency: "$",
-    thumb: "./images/14.png",
-  },
-  {
-    id: 13,
-    product_name: "Rayes Alpha",
-    description: "fsdfs fdfd fdf dfdf df df",
-    price: 350,
-    currency: "$",
-    thumb: "./images/13.png",
-  },
-  {
-    id: 14,
-    product_name: "Rayes Alpha",
-    description: "fsdfs fdfd fdf dfdf df df",
-    price: 350,
-    currency: "$",
-    thumb: "./images/15.png",
   },
 ];
 
