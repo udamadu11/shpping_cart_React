@@ -1,0 +1,33 @@
+.grow {
+  flex-grow: 1;
+}
+.menuButton {
+  margin-right: 10px;
+}
+.title {
+  display: block;
+}
+.search {
+  position: relative;
+  border-radius: 6px;
+  background-color: #fff;
+  margin-right: 20px;
+  margin-left: 5%;
+  width: 30%;
+  height: 40px;
+}
+.search:hover {
+  background-color: aliceblue;
+}
+.searchIcon {
+  padding: 5px;
+  height: 80%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inputBase {
+  color: inherit;
+  padding: 5px 5px;
+}

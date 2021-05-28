@@ -1,0 +1,16 @@
+.root {
+  max-width: 300px;
+  max-height: 400px;
+  transform: scale(0.9);
+  transition: all 0.3s ease-in-out;
+}
+.root:hover {
+  transform: scale(1);
+}
+.media {
+  height: 60%;
+}
+img {
+  width: 100px;
+  height: 100px;
+}
