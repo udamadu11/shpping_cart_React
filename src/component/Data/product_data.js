@@ -19,7 +19,7 @@ const product_card = [
   },
   {
     id: 3,
-    product_name: "Rayes Alpha",
+    product_name: "Rayes Alpha 1",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     price: 350,
@@ -28,7 +28,7 @@ const product_card = [
   },
   {
     id: 4,
-    product_name: "Rayes Alpha",
+    product_name: "Rayes Alpha 2",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     price: 350,
@@ -37,7 +37,7 @@ const product_card = [
   },
   {
     id: 5,
-    product_name: "Rayes Alpha",
+    product_name: "Rayes Alpha 3",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     price: 350,
@@ -46,7 +46,7 @@ const product_card = [
   },
   {
     id: 6,
-    product_name: "Rayes Alpha",
+    product_name: "Rayes Alpha 4",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     price: 350,
@@ -55,7 +55,7 @@ const product_card = [
   },
   {
     id: 7,
-    product_name: "Rayes Alpha",
+    product_name: "Rayes Alpha 5",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     price: 350,
@@ -64,7 +64,7 @@ const product_card = [
   },
   {
     id: 8,
-    product_name: "Rayes Alpha",
+    product_name: "Rayes Alpha 6",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     price: 350,
@@ -73,7 +73,7 @@ const product_card = [
   },
   {
     id: 9,
-    product_name: "Rayes Alpha",
+    product_name: "Rayes Alpha 7",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     price: 350,

@@ -14,9 +14,10 @@ import {
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
-
+import FavoriteIcon from "@material-ui/icons/Favorite";
 //css
 import Styles from "./header.module.css";
+
 function Header({ handleChange }) {
   return (
     <div className={Styles.grow}>
@@ -48,6 +49,11 @@ function Header({ handleChange }) {
               <IconButton>
                 <Badge badgeContent={4} color="secondary">
                   <ShoppingCartIcon />
+                </Badge>
+              </IconButton>
+              <IconButton>
+                <Badge badgeContent={4} color="secondary">
+                  <FavoriteIcon />
                 </Badge>
               </IconButton>
             </div>
