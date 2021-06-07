@@ -10,6 +10,7 @@ function MainContent({ data }) {
       img={item.thumb}
       price={item.price}
       currency={item.currency}
+      id={item.id}
     />
   ));
   return <div className={Styles.container}>{items}</div>;

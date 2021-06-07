@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardHeader,
@@ -8,13 +8,21 @@ import {
   IconButton,
   Typography,
 } from "@material-ui/core";
+import { useDispatch } from "react-redux";
+
 //icon
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 //css
 import Styles from "./cards.module.css";
+//component
+import { addToCart } from "../../Store/Actions/ProductAction";
 
-function Cards({ product_name, description, img, price, currency }) {
+function Cards({ product_name, description, img, price, currency, id }) {
+  const dispatch = useDispatch();
+  function addCart(pid) {
+    dispatch(addToCart(pid));
+  }
   return (
     <Card className={Styles.root}>
       <CardHeader title={product_name} subheader={`${price} ${currency}`} />
@@ -30,7 +38,7 @@ function Cards({ product_name, description, img, price, currency }) {
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="add to cart">
+        <IconButton aria-label="add to cart" onClick={() => addCart(id)}>
           <AddShoppingCartIcon />
         </IconButton>
       </CardActions>

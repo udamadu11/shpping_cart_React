@@ -9,6 +9,7 @@ import {
   MenuItem,
   Menu,
 } from "@material-ui/core";
+import { useSelector } from "react-redux";
 
 //icons
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
@@ -17,8 +18,12 @@ import SearchIcon from "@material-ui/icons/Search";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 //css
 import Styles from "./header.module.css";
+import { Link } from "react-router-dom";
 
 function Header({ handleChange }) {
+  const items = useSelector((state) => state.bucket);
+  const length = items.length;
+
   return (
     <div className={Styles.grow}>
       <AppBar position="static">
@@ -46,11 +51,16 @@ function Header({ handleChange }) {
           </div>
           <div className={Styles.grow}>
             <div>
-              <IconButton>
-                <Badge badgeContent={4} color="secondary">
-                  <ShoppingCartIcon />
-                </Badge>
-              </IconButton>
+              <Link to="/checkout">
+                <IconButton>
+                  <Badge
+                    badgeContent={length === 0 ? "0" : length}
+                    color="secondary"
+                  >
+                    <ShoppingCartIcon />
+                  </Badge>
+                </IconButton>
+              </Link>
               <IconButton>
                 <Badge badgeContent={4} color="secondary">
                   <FavoriteIcon />

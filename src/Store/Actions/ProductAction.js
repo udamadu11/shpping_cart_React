@@ -5,7 +5,7 @@ export const addProduct = (products) => ({
   payload: { products },
 });
 
-export const addToCart = (product) => ({
+export const addToCart = (id) => ({
   type: ADD_TO_CART,
-  payload: product,
+  payload: { id },
 });
