@@ -1,90 +1,94 @@
 import React from "react";
 import {
+  Paper,
+  TableRow,
+  TableHead,
+  TableContainer,
+  TableCell,
+  TableBody,
+  Table,
   Container,
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
+  IconButton,
 } from "@material-ui/core";
-import IconButton from "@material-ui/core/IconButton";
-import Styles from "./checkout.module.css";
 import { makeStyles } from "@material-ui/core/styles";
-import AddIcon from "@material-ui/icons/Add";
-import RemoveIcon from "@material-ui/icons/Remove";
-import DeleteIcon from "@material-ui/icons/Delete";
-import { useSelector } from "react-redux";
-
+import AddCircleRoundedIcon from "@material-ui/icons/AddCircleRounded";
+import RemoveCircleRoundedIcon from "@material-ui/icons/RemoveCircleRounded";
+import { useDispatch, useSelector } from "react-redux";
+import { addCart, removeCart } from "../../Store/Actions/ProductAction";
 const useStyles = makeStyles(() => ({
+  table: {
+    minWidth: 700,
+  },
   container: {
-    marginTop: "10px",
-    left: "0",
-  },
-  root: {
-    display: "flex",
-    width: "400px",
-    marginTop: "15px",
-  },
-  details: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  content: {
-    flex: "1 0 auto",
-  },
-  cover: {
-    width: 100,
-  },
-  controls: {
-    display: "flex",
-    alignItems: "center",
-  },
-  playIcon: {
-    height: 38,
-    width: 38,
+    marginTop: "20px",
   },
 }));
 
-function Checkout(props) {
-  const Styles = useStyles();
+function Checkout() {
+  const classes = useStyles();
   const bucketItem = useSelector((state) => state.bucket);
-  console.log(bucketItem);
+  const bucketTotal = useSelector((state) => state.total);
+  const dispatch = useDispatch();
 
+  function add(id) {
+    dispatch(addCart(id));
+  }
+  function remove(id) {
+    dispatch(removeCart(id));
+  }
   return (
-    <Container maxWidth="md" fixed={true} className={Styles.container}>
-      {bucketItem.map((item) => {
-        const { id, product_name, price, thumb, currency, quantity } = item;
-        return (
-          <Card className={Styles.root}>
-            <div className={Styles.details}>
-              <CardContent className={Styles.content}>
-                <Typography component="h5" variant="h5">
-                  {product_name}
-                </Typography>
-                <Typography variant="subtitle1" color="textSecondary">
-                  {`${currency} ${price}`}
-                </Typography>
-                <Typography variant="subtitle1" color="textSecondary">
-                  {quantity}
-                </Typography>
-              </CardContent>
-              <div className={Styles.controls}>
-                <IconButton aria-label="remove">
-                  <RemoveIcon />
-                </IconButton>
-                <IconButton aria-label="delete">
-                  <DeleteIcon className={Styles.playIcon} />
-                </IconButton>
-                <IconButton aria-label="add">
-                  <AddIcon />
-                </IconButton>
-              </div>
-            </div>
-            <CardMedia title={product_name} style={{ marginLeft: 100 }}>
-              <img src={thumb} className={Styles.cover} />
-            </CardMedia>
-          </Card>
-        );
-      })}
+    <Container maxWidth="md" className={classes.container}>
+      <TableContainer component={Paper}>
+        <Table className={classes.table} aria-label="spanning table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="center" colSpan={4}>
+                Details
+              </TableCell>
+              <TableCell align="right" colSpan={2}>
+                Price
+              </TableCell>
+            </TableRow>
+
+            <TableRow>
+              <TableCell>Desc</TableCell>
+              <TableCell align="right">Add</TableCell>
+              <TableCell align="right">Qty.</TableCell>
+              <TableCell align="right">remove</TableCell>
+              <TableCell align="right">Unit</TableCell>
+              <TableCell align="right">Sum</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {bucketItem.map((data) => (
+              <TableRow key={data.id}>
+                <TableCell>{data.product_name}</TableCell>
+                <TableCell align="right">
+                  <IconButton onClick={() => add(data.id)}>
+                    <AddCircleRoundedIcon color="primary" />
+                  </IconButton>
+                </TableCell>
+                <TableCell align="right">{data.quantity}</TableCell>
+                <TableCell align="right">
+                  <IconButton onClick={() => remove(data.id)}>
+                    <RemoveCircleRoundedIcon color="secondary" />
+                  </IconButton>
+                </TableCell>
+                <TableCell align="right">{data.price}</TableCell>
+                <TableCell align="right">
+                  {data.quantity * data.price}
+                </TableCell>
+              </TableRow>
+            ))}
+
+            <TableRow>
+              <TableCell></TableCell>
+              <TableCell colSpan={4}>Total</TableCell>
+              <TableCell align="right">{bucketTotal}</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
     </Container>
   );
 }

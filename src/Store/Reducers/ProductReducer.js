@@ -1,4 +1,9 @@
-import { ADD_PRODUCTS, ADD_TO_CART } from "../Action-Types/ActionTypes";
+import {
+  ADD_PRODUCTS,
+  ADD_TO_CART,
+  ADD_CART,
+  REMOVE_CART,
+} from "../Action-Types/ActionTypes";
 
 const initialState = {
   products: [],
@@ -30,6 +35,36 @@ function reducer(state = initialState, { type, payload }) {
       return {
         ...state,
         bucket: [...state.bucket, newItem],
+        total: newTotal,
+      };
+    }
+  } else if (type === ADD_CART) {
+    let newItem = state.products.products.find(
+      (item) => item.id === payload.id
+    );
+    newItem.quantity += 1;
+    let newTotal = state.total + newItem.price;
+    return {
+      ...state,
+      total: newTotal,
+    };
+  } else if (type === REMOVE_CART) {
+    let newItem = state.products.products.find(
+      (item) => item.id === payload.id
+    );
+    if (newItem.quantity === 1) {
+      let new_items = state.bucket.filter((item) => item.id !== payload.id);
+      let newTotal = state.total - newItem.price;
+      return {
+        ...state,
+        bucket: new_items,
+        total: newTotal,
+      };
+    } else {
+      newItem.quantity -= 1;
+      let newTotal = state.total - newItem.price;
+      return {
+        ...state,
         total: newTotal,
       };
     }
